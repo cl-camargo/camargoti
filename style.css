@@ -68,7 +68,7 @@
   }
   @keyframes blink{0%,100%{opacity:1;}50%{opacity:0.35;}}
   .brand-logo{
-    height:30px; width:auto; display:block;
+    height:80px; width:auto; display:block;
   }
   .brand small{
     display:block; font-family:'IBM Plex Mono', monospace; font-weight:400;
