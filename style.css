@@ -48,6 +48,7 @@
   header{
     position:sticky; top:0; z-index:50;
     background:rgba(251,250,248,0.88);
+    -webkit-backdrop-filter:blur(8px);
     backdrop-filter:blur(8px);
     border-bottom:1px solid var(--border-soft);
   }
@@ -341,7 +342,7 @@
   .menu-toggle{
     display:none;
     flex-direction:column; justify-content:center; align-items:flex-end; gap:5px;
-    width:38px; height:38px; background:none; border:none; padding:0; cursor:pointer;
+    width:44px; height:44px; background:none; border:none; padding:0; cursor:pointer;
     -webkit-tap-highlight-color:transparent;
   }
   .menu-toggle span{
@@ -356,13 +357,15 @@
   .menu-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
   @media (max-width:860px){
-    .menu-toggle{display:flex;}
+    .menu-toggle{display:flex; margin-left:auto; margin-right:14px;}
     nav.links{
       display:none;
-      position:absolute; top:calc(100% + 1px); left:-28px; right:-28px;
+      position:absolute; top:calc(100% + 1px);
+      left:calc(-28px - env(safe-area-inset-left));
+      right:calc(-28px - env(safe-area-inset-right));
       flex-direction:column; gap:0;
       background:#FFFFFF; border-bottom:1px solid var(--border-soft);
-      padding:6px 28px 18px;
+      padding:6px calc(28px + env(safe-area-inset-right)) calc(18px + env(safe-area-inset-bottom)) calc(28px + env(safe-area-inset-left));
       box-shadow:0 12px 24px -12px rgba(20,20,20,0.18);
     }
     nav.links.nav-open{display:flex;}
@@ -372,11 +375,14 @@
     nav.links a:last-child{border-bottom:none;}
     .cta-small{padding:10px 14px; font-size:11px;}
   }
+  @media (max-width:640px){
+    .cta-small{display:none;}
+  }
 
   /* Safe-area support for notches / home-indicator (iOS) */
   .nav{
-    padding-left:env(safe-area-inset-left);
-    padding-right:env(safe-area-inset-right);
+    padding-left:calc(28px + env(safe-area-inset-left));
+    padding-right:calc(28px + env(safe-area-inset-right));
   }
   footer{
     padding-bottom:calc(40px + env(safe-area-inset-bottom));
@@ -390,4 +396,5 @@
   @media (hover:none){
     a, button{ -webkit-tap-highlight-color:rgba(200,16,46,0.15); }
     .tag, .tool-item, .port{ min-height:44px; }
+    .cta-small, .btn-primary, .btn-ghost{ min-height:44px; display:inline-flex; align-items:center; }
   }
