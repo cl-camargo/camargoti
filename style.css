@@ -177,7 +177,7 @@
   .section-red .port-name,
   .section-red .tool-item:hover{color:var(--amber);}
   .section-red .tag{color:#FFFFFF;}
-  .section-head{max-width:640px; margin-bottom:48px;}
+  .section-head{max-width:100%; margin-bottom:48px;}
   .section-tag{
     font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.14em;
     color:var(--amber); text-transform:uppercase; margin-bottom:14px; display:block;
