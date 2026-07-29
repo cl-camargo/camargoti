@@ -326,6 +326,10 @@
     display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;
     font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--dim);
   }
+  .foot-credit{
+    margin-top:18px; text-align:center;
+    font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--dim);
+  }
 
   /* ---------- RESPONSIVE ---------- */
   @media (max-width:860px){
